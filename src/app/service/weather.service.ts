@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,9 +6,18 @@ import { Injectable } from '@angular/core';
 })
 export class WeatherService {
 
-  constructor() { }
+  private url: string = "https://api.openweathermap.org/data/2.5/weather?appid=c2395dafd752b24690e1cdd50b5a6972&q=";
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getWeather(cityName: string) {
-    console.log(cityName);
+    this.http.get(this.url + cityName).subscribe(
+      result => {
+        console.log(cityName);
+      }
+    )
+    
   }
 }
