@@ -7,7 +7,7 @@ export class WeatherService {
 
   constructor() { }
 
-  getWeather(cityName?: string) {
+  getWeather(cityName: string) {
     console.log(cityName);
   }
 }
