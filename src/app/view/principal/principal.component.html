@@ -4,10 +4,10 @@
             <label>Introduce una Ciudad: </label>
         </div>
         <div class="col-md-8">
-            <input type="text" class="form-control" aria-label="city">
+            <input type="text" class="form-control" aria-label="city" [(ngModel)]="cityName">
         </div>
         <div class="col-md-2">
-            <button type="submit" class="btn btn-primary">Ver el tiempo</button>
+            <button (click)="onSubmit()" type="submit" class="btn btn-primary">Ver el tiempo</button>
         </div>
     </div>
 </div>
