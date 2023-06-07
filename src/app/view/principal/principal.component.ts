@@ -25,7 +25,7 @@ export class PrincipalComponent {
           this.temp = result.main?.temp;
           this.temp_max = result.main?.temp_max;
           this.temp_min = result.main?.temp_min;
-          this.description  = result.weather?.description;
+          this.description  = result.weather?.[0].description;
         }
       );
     } else {

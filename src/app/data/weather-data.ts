@@ -1,5 +1,5 @@
 export class WeatherData {
-    weather?: Weather;
+    weather?: [Weather];
     main?: Main;
 }
 export class Main {
