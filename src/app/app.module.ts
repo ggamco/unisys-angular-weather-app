@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { PrincipalComponent } from './view/principal/principal.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ButtonComponent } from './component/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

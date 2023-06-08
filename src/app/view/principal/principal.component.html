@@ -7,7 +7,9 @@
             <input type="text" class="form-control" aria-label="city" [(ngModel)]="cityName">
         </div>
         <div class="col-md-2">
-            <button (click)="onSubmit()" type="submit" class="btn btn-primary">Ver el tiempo</button>
+            <app-button (click)="onSubmit()" [label]="'Ver el tiempo'" [buttonClass]="'btn-success'"></app-button>
+            <app-button (click)="onSubmit()" [label]="'boton2'" [buttonClass]="'btn-warning'"></app-button>
+            <app-button (click)="onSubmit()" [label]="'boton3'" [buttonClass]="'btn-danger'"></app-button>
         </div>
     </div>
 </div>
@@ -15,7 +17,12 @@
     <div class="row">
         <div class="col-md-2">
             <label for="temp">Temp: </label>
-            <p id="temp">{{temp}}</p>
+            <p id="temp">{{temp}}</p> 
+            
+            <ng-container *ngIf="temp">
+                <span style="color: red;" *ngIf="temp > 35; else otroAviso">Riesgo por altas temperaturas</span>
+                <ng-template #otroAviso><span style="color: blue;">Más fresquito</span></ng-template>
+            </ng-container>
         </div>
     </div>
     <div class="row">
