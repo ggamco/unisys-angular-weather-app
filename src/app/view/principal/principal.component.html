@@ -18,10 +18,11 @@
         <div class="col-md-2">
             <label for="temp">Temp: </label>
             <p id="temp">{{temp}}</p> 
-            
             <ng-container *ngIf="temp">
-                <span style="color: red;" *ngIf="temp > 35; else otroAviso">Riesgo por altas temperaturas</span>
-                <ng-template #otroAviso><span style="color: blue;">Más fresquito</span></ng-template>
+                <app-span [label]="'Aviso por altas temperaturas'" [color]="'red'" *ngIf="temp > 35; else otroAviso"></app-span>
+                <ng-template #otroAviso>
+                    <app-span [label]="'Más fresquito'" [color]="'blue'"></app-span>
+                </ng-template>
             </ng-container>
         </div>
     </div>
